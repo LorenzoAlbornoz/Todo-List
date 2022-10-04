@@ -59,7 +59,7 @@ export default function Todo({ item, onUpdate, onComplete, onDelete }) {
             Edit
           </button>
           <button className="buttonDelete" onClick={() => onDelete(item.id)}>
-            Update
+            Delete
           </button>
         </div>
       )}

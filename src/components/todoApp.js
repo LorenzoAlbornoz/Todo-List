@@ -45,7 +45,7 @@ export default function TodoApp() {
     const item = temp.find((item) => item.id === id);
     item.completed = status;
 
-    console.log("Holis");
+    console.log("Hola");
     setTodos([...temp]);
   }
 
