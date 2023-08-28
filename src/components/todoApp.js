@@ -14,6 +14,11 @@ export default function TodoApp() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (title.trim() === "") {
+      return;
+    }
+
     const newTodo = {
       id: Date.now(),
       title: title,
@@ -21,6 +26,7 @@ export default function TodoApp() {
     };
 
     const oldTodos = [...todos];
+    // nos permite agregar un elemento al principio de nuestro arreglo
     oldTodos.unshift(newTodo);
 
     setTodos(oldTodos);
@@ -52,12 +58,8 @@ export default function TodoApp() {
   return (
     <div className="todoContainer">
       <form onSubmit={handleSubmit} className="todoCreateForm">
-        <input
-          onChange={handleInputChange}
-          value={title}
-          className="todoInput"
-        />
-        <input value="Create todo" type={"submit"} className="buttonCreate" />
+        <input onChange={handleInputChange} value={title} className="todoInput"/>
+        <input value="Nueva tarea" type={"submit"} className="buttonCreate" />
       </form>
 
       <div className="todosContainer">
