@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import "./todoApp.css";
-
 export default function Todo({ item, onUpdate, onComplete, onDelete }) {
   const [isEdit, setIsEdit] = useState(false);
   const [value, setValue] = useState(item.title ?? "");
